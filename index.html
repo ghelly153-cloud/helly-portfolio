@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Helly Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior:smooth;
+   
+}
+
+body{
+    margin:0;
+    padding-top:90px;
+    min-height:100vh;
+    position:relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("13.jpg") center/cover no-repeat;
+    filter:blur(2px);
+    transform:scale(1.02);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.25);
+    z-index:-1;
+}
+
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    background:linear-gradient(90deg,#d8b4fe,#f9a8d4);
+    padding:12px 40px;
+    z-index:1000;
+    flex-wrap:wrap;
+    backdrop-filter:blur(10px);
+}
+
+.navbar a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:21px;
+    color:#6b21a8;
+    transition:0.3s ease;
+    padding:6px 8px;
+}
+
+.navbar a:hover{
+    color:#ec4899;
+    transform:translateY(-4px);
+}
+
+.flower{
+    font-size:34px;
+    background:linear-gradient(45deg,#c084fc,#ff5fa2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0); }
+}
+
+
+.intro-section,
+.define-wrapper,
+.other-wrapper{
+    width:85%;
+    margin:80px auto;
+}
+
+/* GLOBAL CARD STYLE */
+
+.intro-card,
+.define-card,
+.other-card{
+    border-radius:40px;
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+    cursor:pointer;
+    touch-action:manipulation;
+    will-change:transform;
+    backface-visibility:hidden;
+}
+
+/* HOVER EFFECT */
+
+@media (hover:hover){
+    .intro-card:hover,
+    .define-card:hover,
+    .other-card:hover{
+        transform:translateY(-10px);
+        box-shadow:0 50px 120px rgba(168,85,247,0.35);
+    }
+}
+
+/* TOUCH EFFECT */
+
+.intro-card:active,
+.define-card:active,
+.other-card:active{
+    transform:scale(0.97);
+}
+
+/* INTRO CARD */
+
+.intro-card{
+    padding:70px;
+    background:linear-gradient(135deg,#f472b6,#a855f7);
+    color:white;
+    box-shadow:0 40px 90px rgba(168,85,247,0.5);
+}
+
+.intro-card h2{
+    font-size:48px;
+    margin-bottom:25px;
+}
+
+.intro-card p{
+    font-size:21px;
+    line-height:1.9;
+}
+
+
+.define-wrapper{
+    padding:60px;
+    background:rgba(255,255,255,0.85);
+    box-shadow:0 40px 100px rgba(236,72,153,0.3);
+    border-radius:40px;
+}
+
+
+.define-wrapper h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    background:linear-gradient(to right,#ec4899,#9333ea);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.define-container{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.define-card{
+    flex:1;
+    min-width:280px;
+    padding:40px;
+    background:white;
+    box-shadow:0 25px 60px rgba(168,85,247,0.25);
+    color:#6b21a8;
+    
+}
+
+.define-card:nth-child(2){
+    background:linear-gradient(135deg,#f9a8d4,#c084fc);
+    color:white;
+}
+
+
+.other-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+}
+
+.other-card{
+    padding:50px;
+    background:white;
+    box-shadow:0 30px 80px rgba(168,85,247,0.25);
+    color:#6b21a8;
+}
+
+.large-left{
+    width:75%;
+    align-self:flex-start;
+}
+
+.large-right{
+    width:75%;
+    align-self:flex-end;
+    background:linear-gradient(135deg,#fbcfe8,#e9d5ff);
+}
+
+.other-row{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.small{
+    flex:1;
+    min-width:280px;
+}
+
+.highlight{
+    background:linear-gradient(135deg,#f472b6,#a855f7);
+    color:white;
+}
+
+/* ===== AESTHETIC MEDIA CARDS ===== */
+
+.media-card{
+    padding:55px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#fbcfe8,#e9d5ff);
+    box-shadow:0 35px 90px rgba(168,85,247,0.35);
+    color:#6b21a8;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.4s ease;
+}
+
+.media-card::before{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 60%);
+    opacity:0;
+    transition:opacity 0.5s ease;
+}
+
+@media (hover:hover){
+    .media-card:hover{
+        transform:translateY(-12px);
+        box-shadow:0 55px 130px rgba(236,72,153,0.4);
+    }
+
+    .media-card:hover::before{
+        opacity:1;
+    }
+}
+
+.media-card h2{
+    font-size:30px;
+    margin-bottom:25px;
+    background:linear-gradient(to right,#ec4899,#9333ea);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+
+.media-card audio,
+.media-card video{
+    width:100%;
+    margin-top:15px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(168,85,247,0.3);
+    background:white;
+    padding:10px;
+}
+
+
+.footer{
+    text-align:center;
+    padding:40px 20px;
+    font-size:22px;
+    color:#6b21a8;
+}
+
+
+.intro-card,
+.define-card,
+.other-card{
+    opacity:0;
+    animation:fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; }
+    to{ opacity:1; }
+}
+
+
+@media(max-width:1000px){
+    .define-container{
+        flex-direction:column;
+    }
+
+    .large-left,
+    .large-right{
+        width:100%;
+        align-self:center;
+    }
+
+    .other-row{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:600px){
+    body{ padding-top:120px; }
+
+    .navbar{
+        gap:18px;
+        padding:12px 20px;
+    }
+
+    .navbar a{ font-size:17px; }
+
+    .flower{ font-size:26px; }
+
+    .intro-card{
+        padding:35px;
+        border-radius:30px;
+    }
+
+    .intro-card h2{ font-size:30px; }
+
+    .intro-card p{ font-size:16px; }
+
+    .define-wrapper{
+        padding:30px;
+        border-radius:30px;
+    }
+
+    .define-wrapper h2{ font-size:26px; }
+
+    .define-card{ padding:25px; }
+
+    .other-card{
+        padding:25px;
+        border-radius:30px;
+    }
+
+    .footer{
+        font-size:18px;
+        padding:25px 15px;
+    }
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #c084fc, #ff5fa2);
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.1);
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<span class="flower">❀</span>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html">Contact</a>
+<span class="flower">❀</span>
+</div>
+
+<div class="intro-section">
+<div class="intro-card" onclick="window.location.href='details.html#intro'" style="cursor:pointer;">
+
+<h2>Hello, I'm Helly ✨</h2>
+<p>
+I am a passionate postgraduate IT student who believes technology should not only function 
+but inspire. My journey is built on curiosity, discipline, and a deep interest in solving 
+real-world problems using structured logic and creative thinking. I enjoy transforming 
+ideas into digital experiences that feel meaningful and impactful. Every project I build 
+reflects my dedication to detail, performance, and design. I continuously explore new 
+technologies to strengthen my development skills and practical understanding.
+</p>
+</div>
+</div>
+
+<div class="define-wrapper">
+<h2>🌸 What Defines Me</h2>
+
+<div class="define-container">
+<div class="define-card" onclick="window.location.href='details.html#innovative'" style="cursor:pointer;">
+
+<h3>💡 Innovative Thinker</h3>
+<br>
+<p>
+Innovation for me begins with curiosity and observation. I enjoy analysing 
+problems deeply before designing solutions. I believe creativity should 
+always support functionality and efficiency. My projects reflect originality 
+while maintaining structured architecture. I constantly experiment with 
+new approaches to enhance performance and user experience.
+</p>
+</div>
+
+<div class="define-card" onclick="window.location.href='details.html#goal'" style="cursor:pointer;">
+<h3>🎯 Goal Oriented</h3>
+<br>
+<p>
+Clear goals give direction to my learning and development journey. 
+I divide big objectives into manageable steps and track progress carefully. 
+Consistency and discipline help me stay focused even during challenges. 
+I believe success is built through small daily improvements. 
+My determination ensures I never compromise on quality or commitment.
+</p>
+</div>
+
+<div class="define-card" onclick="window.location.href='details.html#learner'" style="cursor:pointer;">
+
+<h3>📚 Continuous Learner</h3>
+<br>
+<p>
+Technology evolves rapidly, and so do I. I dedicate time to upgrading 
+my technical skills through practice and experimentation. Learning 
+for me is a lifelong journey rather than a temporary phase. I actively 
+explore new frameworks, tools, and design principles. Every new skill 
+adds depth to my problem-solving ability and technical confidence.
+</p>
+</div>
+</div>
+
+</div>
+
+<div class="other-wrapper">
+
+<div class="other-card large-left" onclick="window.location.href='details.html#vision'" style="cursor:pointer;">
+
+<h2>🚀 My Vision & Journey</h2>
+<p>
+My vision is to grow as a confident developer who builds scalable and user-friendly systems. 
+Through academic learning and project implementation, I have strengthened my foundations 
+in programming, databases, and structured application design. My journey reflects growth, 
+adaptability, and continuous improvement. I believe every challenge is an opportunity 
+to evolve technically and personally. With clear goals and consistent effort, 
+I aim to contribute meaningfully to the tech industry.
+</p>
+</div>
+
+<div class="other-card large-right" onclick="window.location.href='details.html#academic'" style="cursor:pointer;">
+
+<h2>🎓 Academic Journey</h2>
+<p>
+My academic path has shaped my logical thinking and problem-solving mindset. 
+Through practical labs, assignments, and project development, I developed 
+a strong understanding of software architecture and system planning. 
+I actively participate in learning beyond the classroom by exploring 
+emerging technologies and modern frameworks. Education for me is not 
+just theory, but structured preparation for real-world innovation.
+</p>
+</div>
+
+<div class="other-row">
+<div class="other-card small" onclick="window.location.href='details.html#strengths'" style="cursor:pointer;">
+
+<h2>🧠 Core Strengths</h2>
+<p>
+Analytical thinking, creativity, and adaptability define my strengths. 
+I approach every task with structured planning and attention to detail. 
+Problem-solving excites me because it allows me to think critically 
+and design efficient digital solutions. I balance logic with aesthetics, 
+ensuring both performance and presentation. My ability to learn quickly 
+helps me adapt to new tools and technologies with confidence.
+</p>
+</div>
+
+<div class="other-card small highlight" onclick="window.location.href='details.html#future'" style="cursor:pointer;">
+
+<h2>🌷 Future Aspirations</h2>
+<p>
+In the future, I see myself contributing to innovative software systems 
+that improve user experience and digital accessibility. I aim to work 
+on impactful projects that combine intelligence, automation, and design. 
+Continuous learning will remain my strongest commitment. I aspire to 
+build solutions that are scalable, secure, and meaningful. My goal is 
+not only professional success but creating value through technology.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="other-wrapper">
+
+    <div class="media-card">
+        <h2>🎵 My Learning Playlist</h2>
+        <audio controls>
+            <source src="a1.mpeg" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="media-card">
+        <h2>🎬 My Journey Video</h2>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+
+
+<div class="footer">
+<b>&copy; 2026 Helly Pinankkumar Gajjar. All Rights Reserved 💜</b>
+</div>
+
+</body>
+</html>

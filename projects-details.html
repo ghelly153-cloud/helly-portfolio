@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Details | Helly Gajjar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    padding-top:90px;
+    min-height:100vh;
+    position:relative;
+    -webkit-tap-highlight-color: transparent; /* remove blue tap highlight */
+}
+
+/* Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("contact.jpg") center/cover no-repeat;
+    filter:blur(2px);
+    transform:scale(1.02);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.25);
+    z-index:-1;
+}
+
+/* Navbar */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    background:linear-gradient(90deg,#d8b4fe,#f9a8d4);
+    padding:12px 40px;
+    z-index:1000;
+    flex-wrap:wrap;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.navbar a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:21px;
+    color:#6b21a8;
+    transition:0.3s ease;
+    padding:6px 8px;
+}
+
+.navbar a:hover{
+    color:#ec4899;
+    transform:translateY(-2px);
+}
+
+.flower{
+    font-size:34px;
+    background:linear-gradient(45deg,#c084fc,#ff5fa2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0); }
+}
+
+/* Container */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.project-card {
+    background: linear-gradient(135deg,#fdf4ff,#fce7f3);
+    padding: 35px 30px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 50px rgba(192,132,252,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor:pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(192,132,252,0.35);
+}
+
+.project-card h2 {
+    color: #6b21a8;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.project-card h4 {
+    color: #f16ca8;
+    margin: 15px 0 10px;
+    font-size: 18px;
+}
+
+.project-card p {
+    color: #5b3b8c;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.project-content {
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.project-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(#c084fc,#ff5fa2);
+    border-radius: 10px;
+}
+
+.project-content::-webkit-scrollbar-track {
+    background: #f3e8ff;
+    border-radius: 10px;
+}
+
+.back-btn {
+    display: block;
+    width: max-content;
+    padding: 12px 28px;
+    background: linear-gradient(45deg,#ec4899,#c084fc);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    margin: 40px auto;
+    text-align: center;
+}
+
+[id]{
+    scroll-margin-top:120px;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+    font-size:23px;
+    color:#46176e;
+}
+
+@media(max-width:1024px){
+    .project-card{
+        padding:30px 25px;
+    }
+    .project-card h2{
+        font-size:26px;
+    }
+    .project-card h4{
+        font-size:17px;
+    }
+    .project-card p{
+        font-size:15px;
+    }
+}
+
+@media(max-width:768px){
+    .navbar{
+        gap:15px;
+        padding:0 20px;
+    }
+    .navbar a{
+        font-size:18px;
+    }
+    .flower{
+        font-size:28px;
+    }
+    .project-card{
+        padding:25px 20px;
+        border-radius:20px;
+    }
+    .project-card h2{
+        font-size:24px;
+    }
+    .project-card h4{
+        font-size:16px;
+    }
+    .project-card p{
+        font-size:14px;
+    }
+    .project-content{
+        max-height:300px;
+    }
+    .back-btn{
+        padding:10px 22px;
+        font-size:16px;
+    }
+    .footer{
+        font-size:20px;
+    }
+}
+
+@media(max-width:480px){
+    .navbar{
+        flex-direction:column;
+        height:auto;
+        padding:10px 0;
+    }
+    .navbar a{
+        font-size:16px;
+        padding:5px 0;
+    }
+    .flower{
+        font-size:24px;
+    }
+    .project-card{
+        padding:20px 15px;
+        margin-bottom:35px;
+    }
+    .project-card h2{
+        font-size:22px;
+    }
+    .project-card h4{
+        font-size:15px;
+    }
+    .project-card p{
+        font-size:13px;
+    }
+    .project-content{
+        max-height:260px;
+    }
+    .back-btn{
+        padding:8px 20px;
+        font-size:15px;
+    }
+    .footer{
+        font-size:18px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.project-card {
+    touch-action: manipulation;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #c084fc, #ff5fa2);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<span class="flower">❀</span>
+<a href="new.html">Home</a>
+<a href="about.html">About</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html">Contact</a>
+<span class="flower">❀</span>
+</div>
+
+<div class="container">
+
+    <div class="project-card">
+        <h2>AI-based Flappy Bird Game 🐤</h2>
+
+        <div class="project-content" id="ai">
+            <h4>Technologies Used:</h4>
+            <p>Python, Pygame, AI Logic, Physics Simulation</p>
+
+            <h4>Project Description:</h4>
+            <p>Developed a Flappy Bird game integrated with Artificial Intelligence logic.</p>
+            <p>The AI evaluates the distance to pipes, height of gaps, and bird velocity before deciding when to jump.</p>
+            <p>Implemented gravity and momentum mechanics for realistic bird movement.</p>
+            <p>Physics-based collision detection ensures accurate game responses.</p>
+            <p>Game incorporates score tracking with increasing difficulty levels as the player progresses.</p>
+            <p>Designed an AI decision-making algorithm to optimize survival time.</p>
+            <p>Used event-driven programming to handle obstacles dynamically.</p>
+            <p>Implemented real-time performance optimization for smooth frame rates.</p>
+            <p>Developed a modular code structure for easy maintenance and upgrades.</p>
+            <p>Integrated automated gameplay to test AI efficiency without human input.</p>
+            <p>Added visual and sound effects for enhanced user experience.</p>
+            <p>Provided adjustable game parameters like speed, gravity, and obstacle frequency.</p>
+            <p>Included debugging logs to monitor AI decision patterns.</p>
+            <p>Demonstrates AI logic application in real-time interactive gaming.</p>
+            <p>Improves understanding of algorithm optimization for game AI.</p>
+            <p>Supports further enhancements like multiplayer or cloud scoring integration.</p>
+            <p>Emphasizes problem-solving and analytical thinking.</p>
+            <p>Serves as a showcase project for AI-based game development skills.</p>
+            <p>Provides a hands-on learning experience with Python and Pygame libraries.</p>
+        </div>
+    </div>
+
+    <div class="project-card" id="cruise">
+        <h2>Online Cruise Booking System 🚢</h2>
+
+        <div class="project-content">
+            <h4>Technologies Used:</h4>
+            <p>Web Technologies, Database Management, Payment Gateway Integration, Backend Logic</p>
+
+            <h4>Project Description:</h4>
+            <p>Designed an online cruise booking system for customers to explore and reserve cruise trips.</p>
+            <p>Integrated real-time cruise availability and destination search features.</p>
+            <p>Backend processes booking data and manages cabin selection automatically.</p>
+            <p>Developed a secure and user-friendly interface for smooth navigation.</p>
+            <p>System allows customers to select travel dates and preferred packages.</p>
+            <p>Implemented secure online payment gateway integration.</p>
+            <p>Ensured accurate booking confirmation and email notification system.</p>
+            <p>Tested the system under multiple user sessions for performance reliability.</p>
+            <p>Ensured compatibility across different devices and screen sizes.</p>
+            <p>Designed a scalable architecture to handle increasing user traffic.</p>
+            <p>Focused on secure authentication and user data protection.</p>
+            <p>Improved database optimization for faster booking retrieval.</p>
+            <p>Utilized backend logic for efficient reservation management.</p>
+            <p>Allows administrators to manage cruise schedules and pricing.</p>
+            <p>Demonstrates practical implementation of web-based booking systems.</p>
+            <p>Serves as a foundation for travel and tourism management platforms.</p>
+            <p>Highlights combination of frontend, backend, and database integration skills.</p>
+            <p>Provides hands-on learning of booking workflows and transaction systems.</p>
+            <p>Enhances understanding of web architecture and online reservation models.</p>
+            <p>Perfect for showcasing full-stack web development expertise.</p>
+        </div>
+    </div>
+
+    <div class="project-card" id="grocery">
+        <h2>Online Grocery Store 🛒</h2>
+
+        <div class="project-content">
+            <h4>Technologies Used:</h4>
+            <p>Web Development, Database Integration, E-commerce Logic, Payment System</p>
+
+            <h4>Project Description:</h4>
+            <p>Developed an online grocery store platform for customers to purchase daily essentials.</p>
+            <p>Allows users to browse products by categories such as fruits, vegetables, and dairy.</p>
+            <p>Integrated shopping cart functionality for managing selected items.</p>
+            <p>Provides secure user registration and login authentication system.</p>
+            <p>Implements real-time product availability and stock management.</p>
+            <p>Supports multiple payment methods for convenient transactions.</p>
+            <p>Designed order tracking system for monitoring delivery status.</p>
+            <p>Ensured the platform handles multiple simultaneous users efficiently.</p>
+            <p>Optimized the database for quick product search and filtering.</p>
+            <p>Includes responsive design for mobile and desktop compatibility.</p>
+            <p>Implemented admin dashboard for managing products and orders.</p>
+            <p>Incorporates discount and promotional offer management.</p>
+            <p>Facilitates smooth checkout process with secure payment encryption.</p>
+            <p>Encourages easy and convenient online shopping experience.</p>
+            <p>Built with modular structure to allow future scalability.</p>
+            <p>Demonstrates practical implementation of e-commerce website development.</p>
+            <p>Focuses on user-friendly interface and seamless navigation.</p>
+            <p>Integrates database operations for persistent order and customer data.</p>
+            <p>Provides real-world application of online retail system concepts.</p>
+            <p>Excellent project for portfolio showcasing complete e-commerce development.</p>
+        </div>
+    </div>
+
+
+    <a href="about.html" class="back-btn" >⬅ Back to Portfolio</a>
+</div>
+
+<div class="footer">
+<b>&copy; 2026 Helly Pinankkumar Gajjar. All Rights Reserved 💜.</b>
+</div>
+
+</body>
+</html>

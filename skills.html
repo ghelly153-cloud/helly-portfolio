@@ -1,0 +1,476 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<title>Skills | Helly Gajjar</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+body{
+    margin:0;
+    padding-top:90px;
+    min-height:100vh;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("skills.jpg") center/cover no-repeat;
+    filter:blur(3px);
+    transform:scale(1.02);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.25);
+    z-index:-1;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    background:linear-gradient(90deg,#d8b4fe,#f9a8d4);
+    padding:10px 40px;
+    z-index:1000;
+    flex-wrap:wrap; 
+    text-align:center;
+}
+
+.navbar a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:21px;
+    color:#6b21a8;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#ec4899;
+}
+
+.flower{
+    font-size:34px;
+    background:linear-gradient(45deg,#c084fc,#ff5fa2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0); }
+}
+
+.flower:hover{
+    transform:scale(1.3) rotate(12deg);
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.card,
+.tools-card,
+.soft-card,
+.resources-card{
+    transition:0.4s ease;
+    cursor:pointer; 
+    touch-action: manipulation; 
+}
+
+.card{
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    margin-bottom:40px;
+}
+
+.card:hover,
+.tools-card:hover,
+.soft-card:hover,
+.resources-card:hover{
+    transform:translateY(-8px);
+}
+
+.card p{
+    color:#7c3aed;   
+    font-size:19px;
+    line-height:1.8;
+    font-weight:600;
+}
+
+.card h1{
+    text-align:center;
+    color:#f93687;   
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+.card h2{
+    font-size:26px;
+    margin-bottom:20px;
+    font-weight:bold;
+    color:#9d174d;   
+}
+
+.skill-btn{
+    display:inline-block;
+    margin:8px 5px;
+    padding:10px 18px;
+    border-radius:25px;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:bold;
+    color:white;
+    transition:0.3s;
+}
+
+.html{ background:linear-gradient(45deg,#ff758c,#ff7eb3); }
+.css{ background:linear-gradient(45deg,#a18cd1,#fbc2eb); }
+.js{ background:linear-gradient(45deg,#fbc531,#f0932b); }
+.sql{ background:linear-gradient(45deg,#36d1dc,#5b86e5); }
+.react{ background:linear-gradient(45deg,#667eea,#764ba2); }
+.c{ background:linear-gradient(45deg,#ff9a9e,#fad0c4); }
+.cpp{ background:linear-gradient(45deg,#a1c4fd,#c2e9fb); }
+.java{ background:linear-gradient(45deg,#f6d365,#fda085); }
+.python{ background:linear-gradient(45deg,#89f7fe,#66a6ff); }
+
+.skill-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card a.skill-btn{
+    white-space:normal;
+}
+
+.grid{
+    display:flex;
+    gap:40px;
+    margin-bottom:40px;
+    flex-wrap:wrap; 
+}
+
+.tools-card{
+    flex:1 1 300px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    border-left:6px solid #c890fc;
+    box-shadow:0 15px 30px rgba(178, 102, 248, 0.25);
+}
+
+.tools-card a{
+    display:block;
+    margin:15px 0;
+    text-decoration:none;
+    color:#ec4899; 
+    font-weight:bold;
+    font-size:19px;
+}
+
+.tools-card a:hover{
+    color:#a855f7;  
+    transform:translateY(-5px);
+}
+
+.soft-card{
+    flex:1 1 300px;
+    background:linear-gradient(135deg,#f9a8d4,#d8b4fe);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 20px 40px rgba(236,72,153,0.35);
+}
+
+.soft-card a{
+    display:block;
+    margin:15px 0;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    font-size:19px;
+}
+
+.soft-card a:hover{
+    text-decoration:underline;
+    transform:translateY(-5px);
+}
+
+.resources-card{
+    background:rgba(255,255,255,0.95);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 25px 50px rgba(219,39,119,0.25);
+    border-top:6px solid #ef7cb5;
+}
+
+h2{
+    color: #764ba2;
+}
+
+.resources-card a{
+    display:block;
+    margin:15px 0;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:19px;
+    color:#9333ea;  
+}
+
+.resources-card a:hover{
+    color:#ec4899;  
+    transform:translateY(-5px);
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+    font-size:23px;
+    color:#46176e;
+}
+
+/* Smooth scroll */
+html{
+    scroll-behavior:smooth;
+}
+
+/* Scrollbar Width */
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+/* Scrollbar Thumb (moving part) */
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #c084fc, #ff5fa2);
+    border-radius:10px;
+}
+
+/* Scrollbar Track (background line) */
+::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.1);
+}
+
+
+
+@media(max-width:992px){
+    .navbar{
+        gap:25px;
+    }
+    .card{
+        padding:25px;
+    }
+}
+
+@media(max-width:768px){
+    body{
+        padding-top:130px;
+    }
+
+    .navbar{
+        gap:15px;
+        padding:10px 20px;
+    }
+
+    .navbar a{
+        font-size:18px;
+    }
+
+    .flower{
+        font-size:28px;
+    }
+
+    .grid{
+        flex-direction:column;
+    }
+
+    .card h1{
+        font-size:26px;
+    }
+
+    .card p{
+        font-size:17px;
+    }
+
+    .tools-card,
+    .soft-card,
+    .resources-card{
+        padding:25px;
+    }
+}
+
+@media(max-width:480px){
+    .navbar a{
+        font-size:16px;
+    }
+
+    .card h1{
+        font-size:22px;
+    }
+
+    .card h2{
+        font-size:20px;
+    }
+
+    .card p{
+        font-size:15px;
+    }
+
+    .skill-btn{
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+
+    .footer{
+        font-size:18px;
+    }
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #c084fc, #ff5fa2);
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <span class="flower">❀</span>
+    <a href="new.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+    <span class="flower">❀</span>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h1>My Skills & Expertise</h1>
+<br>
+<p>
+I am Helly Pinankkumar Gajjar, an MSc IT student at Gujarat University.
+I am passionate about frontend development and building clean,
+elegant and user-friendly websites. I continuously improve my
+programming knowledge, logical thinking and modern technologies
+to become a confident professional web developer.
+
+I enjoy transforming creative ideas into responsive and interactive web interfaces.
+I focus on writing structured, maintainable, and efficient code.
+I actively explore new tools and technologies to enhance my development skills.
+My goal is to grow as a skilled developer while creating impactful digital experiences.
+</p>
+</div>
+
+<div class="card">
+<h2 style="color:#764ba2;">💻 Technical Skills</h2>
+<a href="https://www.w3schools.com/html/" target="_blank" class="skill-btn html">🌐 HTML5</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="skill-btn css">🎨 CSS3</a>
+<a href="https://javascript.info/" target="_blank" class="skill-btn js">⚡ JavaScript</a>
+<a href="https://react.dev/learn" target="_blank" class="skill-btn react">⚛ React</a>
+<a href="https://www.geeksforgeeks.org/sql-tutorial/" target="_blank" class="skill-btn sql">🗄 SQL</a>
+<a href="https://www.geeksforgeeks.org/c-programming-language/" target="_blank" class="skill-btn c">💠 C</a>
+<a href="https://www.geeksforgeeks.org/c-plus-plus/" target="_blank" class="skill-btn cpp">🔷 C++</a>
+<a href="https://www.javatpoint.com/java-tutorial" target="_blank" class="skill-btn java">☕ Java</a>
+<a href="https://docs.python.org/3/tutorial/" target="_blank" class="skill-btn python">🐍 Python</a>
+</div>
+
+<div class="grid">
+
+<div class="tools-card">
+<h2>🛠 Tools & Platforms</h2>
+<a href="newwebpage.html#vscode">💻 Visual Studio Code</a>
+<a href="newwebpage.html#gitgithub">🔗 Git & GitHub</a>
+<a href="newwebpage.html#chromedevtools">🌐 Chrome Developer Tools</a>
+<a href="newwebpage.html#learningdocs">📚 Learning Documentation</a>
+</div>
+
+<div class="soft-card">
+<h2>✨ Soft Skills</h2>
+<a href="newwebpage.html#problemsolving">🧠 Problem Solving</a>
+<a href="newwebpage.html#communication">💬 Communication Skills</a>
+<a href="newwebpage.html#teamwork">🤝 Team Collaboration</a>
+<a href="newwebpage.html#timemanagement">⏳ Time Management</a>
+<a href="newwebpage.html#logical">🧩 Logical Thinking</a>
+</div>
+
+</div>
+
+<div class="resources-card">
+<h2>📚 My Learning Resources</h2><br><br>
+
+<h3 style="color:#fd3988; font-size:22px; margin-bottom:10px;">
+💡 Currently Learning
+</h3><br>
+
+<p style="color:#6d28d9; font-size:18px; font-weight:600; line-height:1.8;">
+I am strengthening my JavaScript fundamentals and building small React projects.
+My focus is on creating responsive UI designs with modern CSS techniques.
+I aim to gain real-world project experience and become industry-ready.
+</p><br>
+
+<a href="https://developer.mozilla.org/" target="_blank" style="color:#9c62f9; font-weight:bold;">🌍 MDN Web Documentation</a>
+
+<a href="https://react.dev/" target="_blank" style="color:#9c62f9; font-weight:bold;">⚛ React Official Documentation</a>
+
+<a href="https://www.geeksforgeeks.org/" target="_blank" style="color:#9c62f9; font-weight:bold;">💻 GeeksforGeeks</a>
+
+<a href="https://www.w3schools.com/" target="_blank" style="color:#9c62f9; font-weight:bold;">📖 W3Schools</a>
+
+<a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank" style="color:#ff5ca0; font-weight:bold;">
+🎥 JavaScript Full Course (YouTube)
+</a>
+
+<a href="https://www.youtube.com/playlist?list=PLu0W_9lII9ah7DDtYtflgwMwpT3xmjXY9" target="_blank" style="color:#ff5ca0; font-weight:bold;">
+⚛ React Projects Tutorial (YouTube)
+</a>
+
+</div>
+
+<div class="footer">
+<b>&copy; 2026 Helly Pinankkumar Gajjar. All Rights Reserved 💜.</b>
+</div>
+
+</body>
+</html>

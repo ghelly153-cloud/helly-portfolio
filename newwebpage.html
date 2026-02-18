@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skills | Helly Gajjar</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    padding-top:90px;
+    min-height:100vh;
+    position:relative;
+    -webkit-tap-highlight-color: transparent; /* remove blue tap highlight */
+}
+
+/* Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("contact.jpg") center/cover no-repeat;
+    filter:blur(2px);
+    transform:scale(1.02);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.25);
+    z-index:-1;
+}
+
+/* Navbar */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    background:linear-gradient(90deg,#d8b4fe,#f9a8d4);
+    padding:12px 40px;
+    z-index:1000;
+    flex-wrap:wrap;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.navbar a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:21px;
+    color:#6b21a8;
+    transition:0.3s ease;
+    padding:6px 8px;
+}
+
+.navbar a:hover{
+    color:#ec4899;
+    transform:translateY(-2px);
+}
+
+.flower{
+    font-size:34px;
+    background:linear-gradient(45deg,#c084fc,#ff5fa2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0); }
+}
+
+/* Container */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(18px);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(183,148,244,0.2);
+    transition: all 0.4s ease;
+    margin-bottom:50px;
+    scroll-margin-top:110px;
+    touch-action: manipulation;
+    cursor:default;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 50px rgba(183,148,244,0.35);
+}
+
+/* Text Styling */
+.card h2{
+    color:#6b21a8;
+    margin-bottom:20px;
+}
+
+.card h3{
+    color:#9333ea;
+    margin:15px 0 10px;
+}
+
+.card p{
+    color:#6a4caf;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.card ul{
+    margin-left:20px;
+    margin-bottom:20px;
+    color:#6a4caf;
+}
+
+/* Buttons */
+.link-btn{
+    display:inline-block;
+    margin-top:10px;
+    margin-right:15px;
+    padding:10px 22px;
+    border-radius:25px;
+    background:linear-gradient(45deg,#c084fc,#f472b6);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s ease;
+    touch-action: manipulation;
+}
+
+.link-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(244,114,182,0.35);
+}
+
+.link-btn:active{
+    transform:scale(0.97);
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+    font-size:23px;
+    color:#6b21a8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#c084fc,#f472b6);
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.1);
+}
+
+/* Tablet */
+@media(max-width:768px){
+
+body{
+    padding-top:120px;
+}
+
+.navbar{
+    gap:15px;
+    padding:15px;
+}
+
+.navbar a{
+    font-size:17px;
+}
+
+.card{
+    padding:25px;
+    margin-bottom:35px;
+}
+
+.card h2{
+    font-size:20px;
+}
+
+.card h3{
+    font-size:17px;
+}
+
+.card p{
+    font-size:15px;
+}
+
+}
+
+/* Mobile */
+@media(max-width:480px){
+
+.link-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin:10px 0;
+}
+
+.card{
+    border-radius:20px;
+}
+
+}
+
+/* Small Mobile */
+@media(max-width:360px){
+
+.navbar a{
+    font-size:15px;
+}
+
+.card{
+    padding:18px;
+}
+
+.card h2{
+    font-size:18px;
+}
+
+.card p{
+    font-size:14px;
+}
+
+}
+
+</style>
+
+
+</style>
+</head>
+
+<body>
+
+    <div class="navbar">
+    <span class="flower">❀</span>
+    <a href="new.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+    <span class="flower">❀</span>
+</div>
+
+<div class="container">
+
+    <div class="card" id="vscode">
+     <h2>💻 Visual Studio Code</h2>
+     <h3>What is Visual Studio Code?</h3> 
+     <p> Visual Studio Code is a free source code editor developed by Microsoft. It supports many programming languages like HTML, CSS, JavaScript, Python and more. It provides extensions to improve functionality. It includes debugging tools and Git integration. The current stable version is regularly updated by Microsoft. It works on Windows, macOS and Linux. It is lightweight but powerful. It provides IntelliSense for smart suggestions. It supports themes and customization. It improves productivity. It is one of the most popular editors worldwide. </p> 
+     <h3>Why & How I Use It</h3> 
+     <p> I use VS Code to write and manage my web development projects. I use Live Server to preview websites. I install extensions for better productivity. I use terminal inside VS Code. I debug errors using built-in tools. It helps me organize files efficiently. </p> 
+     <h3>Installation Steps</h3>
+      <ul> 
+        <li>Visit official VS Code website.</li> 
+        <li>Download for your OS.</li> 
+        <li>Run installer.</li> 
+        <li>Complete setup.</li>
+         <li>Open and install useful extensions.</li> 
+         <li>Start coding.</li>
+         </ul> 
+         <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code" target="_blank" class="link-btn">Wikipedia</a>
+          <a href="https://code.visualstudio.com/" target="_blank" class="link-btn">Official Website</a> 
+          <a href="https://code.visualstudio.com/Download" target="_blank" class="link-btn">Download</a>
+    </div>
+
+
+<div class="card" id="gitgithub">
+
+<h2>🔗 Git & GitHub</h2>
+
+<h3>What is Git & GitHub?</h3>
+<p>
+Git is a distributed version control system used to track changes in source code. GitHub is a cloud-based platform that hosts Git repositories. It allows developers to collaborate on projects efficiently. It supports branching and merging features. It keeps complete history of code changes. It enables teamwork across different locations. It provides pull request functionality. It supports issue tracking and project management. It integrates with many development tools. It improves code security and backup. It is widely used in software development industry.
+</p>
+
+<h3>Why & How I Use It</h3>
+<p>
+I use Git to track changes in my projects. I create repositories on GitHub to store my code online. I use commit and push commands regularly. I manage different branches for features. I collaborate with teammates using pull requests. It helps me maintain project versions properly.
+</p>
+
+<h3>Installation Steps</h3>
+<ul>
+<li>Visit official Git website.</li>
+<li>Download Git for your operating system.</li>
+<li>Run installer and follow instructions.</li>
+<li>Complete setup process.</li>
+<li>Create GitHub account.</li>
+<li>Start managing repositories.</li>
+</ul>
+
+<a href="https://en.wikipedia.org/wiki/Git" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://git-scm.com/" target="_blank" class="link-btn">Official Website</a>
+<a href="https://git-scm.com/downloads" target="_blank" class="link-btn">Download</a>
+
+</div>
+
+<div class="card" id="chromedevtools">
+
+<h2>🌐 Chrome Developer Tools</h2>
+
+<h3>What is Chrome Developer Tools</h3>
+<p>
+Chrome Developer Tools is a set of web development tools built directly into the Google Chrome browser. It helps developers inspect HTML and CSS elements. It allows debugging JavaScript code. It provides network monitoring features. It helps analyze website performance. It supports responsive device testing. It allows viewing console errors. It helps edit styles in real time. It provides security inspection tools. It improves debugging efficiency. It is essential for frontend developers.
+</p>
+
+<h3>Why & How I Use It</h3>
+<p>
+I use Chrome DevTools to inspect website structure. I debug CSS issues using element inspector. I check JavaScript errors in console tab. I test responsive layouts using device toolbar. I monitor network requests during development. It helps me fix design and performance problems quickly.
+</p>
+
+<h3>Installation Steps</h3>
+<ul>
+<li>Visit official Google Chrome website.</li>
+<li>Download Chrome browser.</li>
+<li>Install browser on your system.</li>
+<li>Open any website.</li>
+<li>Right click and select Inspect.</li>
+<li>Start using Developer Tools.</li>
+</ul>
+
+<a href="https://en.wikipedia.org/wiki/Google_Chrome" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://www.google.com/chrome/" target="_blank" class="link-btn">Official Website</a>
+<a href="https://www.google.com/chrome/downloads/" target="_blank" class="link-btn">Download</a>
+
+</div>
+    
+
+<div class="card" id="learningdocs">
+
+<h2>📚 Learning Documentation</h2>
+
+<h3>What is Learning Documentation?</h3>
+<p>
+Learning documentation refers to official guides, tutorials, and reference materials provided by platforms and technologies. It helps developers understand concepts clearly. It provides structured explanations with examples. It includes API references and usage guides. It helps solve technical doubts. It improves learning efficiency. It provides updated information. It supports self learning. It enhances technical knowledge. It builds strong foundation. It is essential for continuous growth in development.
+</p>
+
+<h3>Why & How I Use It</h3>
+<p>
+I regularly read official documentation while learning new technologies. I refer to documentation when I face coding errors. I follow examples provided in guides. I explore API references carefully. I bookmark useful sections for future use. It helps me understand concepts deeply and accurately.
+</p>
+
+<h3>Installation Steps</h3>
+<ul>
+<li>Search official documentation website.</li>
+<li>Open trusted platform resources.</li>
+<li>Read getting started guide.</li>
+<li>Follow examples step by step.</li>
+<li>Practice code from documentation.</li>
+<li>Apply learning in projects.</li>
+</ul>
+
+<a href="https://en.wikipedia.org/wiki/Technical_documentation" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://developer.mozilla.org/" target="_blank" class="link-btn">Official Website</a>
+<a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" class="link-btn">Start Learning</a>
+
+</div>
+
+<!-- ================= PROBLEM SOLVING ================= -->
+
+<div class="card" id="problemsolving">
+<h2>🧠 Problem Solving Ability</h2>
+<h3>What is Problem Solving</h3>
+<p>
+Problem solving is the ability to identify issues and find effective solutions. It requires logical thinking and patience. It improves analytical skills. It helps in programming and academics. It builds confidence. It improves decision-making. It develops creativity. It increases focus. It strengthens understanding. It helps manage complex situations. It is essential for developers. It improves learning ability. It builds independence. It helps in teamwork. It supports career growth.
+</p>
+<h3>How I Use This Skill</h3>
+<p>
+During college projects, I break complex tasks into smaller parts. When errors occur, I debug step by step. I search for solutions and understand logic. I practice coding problems daily. I apply logic while designing websites. It helps me complete assignments efficiently. I stay calm and think logically. It improves my project quality.
+</p>
+<a href="https://en.wikipedia.org/wiki/Problem_solving" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://www.youtube.com/results?search_query=problem+solving+skills" target="_blank" class="link-btn">YouTube</a>
+</div>
+
+<div class="card" id="communication" >
+<h2>💬 Communication Skills</h2>
+<h3>What is Communication?</h3>
+<p>
+Communication is the ability to express ideas clearly and effectively. It requires confidence and clarity. It improves interpersonal skills. It helps in presentations and discussions. It builds professional relationships. It improves teamwork. It develops listening skills. It increases understanding. It strengthens collaboration. It helps resolve conflicts. It is essential for career success. It improves leadership ability. It builds trust. It helps in client interactions. It supports workplace growth.
+</p>
+<h3>How I Use This Skill</h3>
+<p>
+During college presentations, I explain topics confidently. In team projects, I share ideas clearly. When discussing assignments, I communicate respectfully. I practice speaking skills regularly. I participate in group discussions actively. It helps me build strong connections. I listen carefully to feedback. It improves my confidence level.
+</p>
+<a href="https://en.wikipedia.org/wiki/Communication" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://www.youtube.com/results?search_query=communication+skills" target="_blank" class="link-btn">YouTube</a>
+</div>
+
+<div class="card" id="teamwork">
+<h2>🤝 Team Collaboration</h2>
+<h3>What is Team Collaboration?</h3>
+<p>
+Team collaboration is the ability to work effectively with others. It requires cooperation and respect. It improves productivity. It helps achieve common goals. It builds trust among members. It improves communication. It develops leadership qualities. It increases efficiency. It strengthens relationships. It helps manage responsibilities. It is essential for project success. It improves coordination. It builds accountability. It helps solve group challenges. It supports organizational growth.
+</p>
+<h3>How I Use This Skill</h3>
+<p>
+During group projects, I divide tasks equally. I support teammates when needed. When conflicts arise, I discuss calmly. I share responsibilities fairly. I contribute actively in meetings. It helps complete projects successfully. I respect different opinions. It improves overall team performance.
+</p>
+<a href="https://en.wikipedia.org/wiki/Collaboration" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://www.youtube.com/results?search_query=team+collaboration+skills" target="_blank" class="link-btn">YouTube</a>
+</div>
+
+<div class="card" id="timemanagement">
+<h2>⏳ Time Management</h2>
+<h3>What is Time Management?</h3>
+<p>
+Time management is the ability to plan and organize tasks efficiently. It requires discipline and focus. It improves productivity. It helps meet deadlines. It builds responsibility. It improves work quality. It develops prioritization skills. It increases efficiency. It strengthens consistency. It helps reduce stress. It is essential for academic success. It improves performance. It builds reliability. It helps balance personal and professional life. It supports long-term growth.
+</p>
+<h3>How I Use This Skill</h3>
+<p>
+During exams, I create study schedules. In projects, I set deadlines for tasks. When multiple assignments come, I prioritize them. I avoid procrastination. I manage my daily routine properly. It helps me complete work on time. I track progress regularly. It improves my overall efficiency.
+</p>
+<a href="https://en.wikipedia.org/wiki/Time_management" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://www.youtube.com/results?search_query=time+management+skills" target="_blank" class="link-btn">YouTube</a>
+</div>
+
+<div class="card" id="logical">
+<h2>🧩 Logical Thinking</h2>
+<h3>What is Logical Thinking?</h3>
+<p>
+Logical thinking is the ability to analyze situations clearly and rationally. It requires reasoning and clarity. It improves analytical skills. It helps in coding and problem solving. It builds strong decision-making ability. It improves accuracy. It develops structured thinking. It increases efficiency. It strengthens understanding. It helps solve complex problems. It is essential for programmers. It improves debugging skills. It builds confidence. It helps in academics. It supports professional growth.
+</p>
+<h3>How I Use This Skill</h3>
+<p>
+During coding practice, I analyze logic step by step. When errors appear, I check conditions carefully. I write structured programs. I test different scenarios. I apply reasoning in projects. It helps me write efficient code. I focus on accuracy. It improves my programming ability.
+</p>
+<a href="https://en.wikipedia.org/wiki/Logical_reasoning" target="_blank" class="link-btn">Wikipedia</a>
+<a href="https://www.youtube.com/results?search_query=logical+thinking+skills" target="_blank" class="link-btn">YouTube</a>
+</div>
+
+</div>
+
+<div class="footer">
+<b>&copy; 2026 Helly Pinankkumar Gajjar. All Rights Reserved 💜.</b>
+</div>
+
+</body>
+</html>

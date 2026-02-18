@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact | Helly Gajjar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    padding-top:90px;
+    min-height:100vh;
+    position:relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("contact2.jpg") center/cover no-repeat;
+    filter:blur(3px);
+    transform:scale(1.03);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.28);
+    z-index:-1;
+}
+
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    background:linear-gradient(90deg,#b794f4,#f9a8d4);
+    padding:12px 25px;
+    z-index:1000;
+    flex-wrap:wrap;
+    backdrop-filter:blur(10px);
+}
+
+.navbar a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:21px;
+    color:#5b3b8c;
+    transition:all 0.3s ease;
+    padding:6px 10px;
+}
+
+.navbar a:hover{
+    color:#ff5fa2;
+    transform:translateY(-2px);
+}
+
+
+.flower{
+    display:inline-block;
+    font-size:34px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#c084fc,#ff5fa2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:float 3s ease-in-out infinite;
+    transition:transform 0.4s ease;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0); }
+}
+
+.flower:hover{
+    transform:scale(1.25) rotate(10deg);
+}
+
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:40px;
+}
+
+
+.card{
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(18px);
+    padding:40px;
+    border-radius:28px;
+    box-shadow:0 20px 40px rgba(183,148,244,0.25);
+    transition:all 0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 30px 60px rgba(183,148,244,0.35);
+}
+
+
+.info h2,
+.card h2{
+    color:#6b21a8;
+    margin-bottom:20px;
+}
+
+.info p{
+    color:#7a5ca6;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+
+.contact-links{
+    margin-top:20px;
+}
+
+.contact-links a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:15px 0;
+    padding:14px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#6a4caf;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 18px rgba(183,148,244,0.25);
+    transition:all 0.3s ease;
+    word-break:break-word;
+    touch-action:manipulation;
+}
+
+.contact-links a:hover{
+    transform:translateY(-5px);
+    background:linear-gradient(45deg,#e9d5ff,#fbcfe8);
+}
+
+.contact-links a:active{
+    transform:scale(0.97);
+}
+
+.contact-links a i{
+    font-size:18px;
+    color:#c084fc;
+}
+
+.contact-links a span{
+    color:#ff5fa2;
+}
+
+/* FORM */
+
+form label{
+    display:block;
+    margin-top:18px;
+    font-weight:bold;
+    color:#6a4caf;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:14px;
+    border:1px solid #e9d5ff;
+    background:rgba(255,255,255,0.95);
+    font-size:15px;
+    transition:all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus{
+    outline:none;
+    border:1px solid #c084fc;
+    box-shadow:0 0 10px rgba(192,132,252,0.3);
+}
+
+/* BUTTON */
+
+button{
+    margin-top:25px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#c084fc,#f472b6);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    touch-action:manipulation;
+}
+
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(244,114,182,0.35);
+}
+
+button:active{
+    transform:scale(0.97);
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+    font-size:23px;
+    color:#6b21a8;
+}
+
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#c084fc,#f472b6);
+    border-radius:10px;
+}
+
+
+@media(max-width:900px){
+    .container{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .card{
+        padding:30px;
+    }
+}
+
+@media(max-width:600px){
+
+    body{
+        padding-top:120px;
+    }
+
+    .navbar{
+        gap:18px;
+    }
+
+    .navbar a{
+        font-size:17px;
+    }
+
+    .flower{
+        font-size:26px;
+    }
+
+    .card{
+        padding:25px;
+        border-radius:22px;
+    }
+
+    .info h2,
+    .card h2{
+        font-size:22px;
+    }
+
+    .footer{
+        font-size:18px;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <span class="flower left">❀</span>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+    <span class="flower right">❀</span>
+</div>
+
+<div class="container">
+
+    <div class="card info">
+        <h2>Let's Connect 🌸</h2>
+        <p>
+            I would love to hear from you. Whether it's about collaboration,
+            learning opportunities, or just a friendly hello — feel free to reach out!
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:ghelly153@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email:</span> ghelly153@gmail.com
+            </a>
+
+            <a href="tel:9724574101">
+                <i class="fa-solid fa-phone"></i>
+                <span>Phone:</span> 9724574101
+            </a>
+
+            <a href="https://www.google.com/maps/place/Gujarat,+India" target="_blank">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Location:</span> Gujarat, India
+            </a>
+
+        </div>
+    </div>
+
+   
+<div class="card">
+    <h2>Send Me a Message 💌</h2>
+
+    <form id="contactForm" action="thankyou.html" onsubmit="return validateForm()">
+    
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <small id="nameError" style="color:red; display:none;"></small>
+
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <small id="emailError" style="color:red; display:none;"></small>
+
+     
+        <label>Subject</label>
+        <input type="text" id="subject" placeholder="Project / Collaboration" required>
+        <small id="subjectError" style="color:red; display:none;"></small>
+
+        <label>Your Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+        <small id="messageError" style="color:red; display:none;"></small>
+
+        <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+    </form>
+</div>
+</div>
+
+<div class="footer" >
+<b>&copy; 2026 Helly Pinankkumar Gajjar. All Rights Reserved 💜.</b>
+</div>
+
+<script>
+const nameInput = document.getElementById('name');
+const subjectInput = document.getElementById('subject');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+
+[nameInput, subjectInput].forEach(input => {
+    input.addEventListener('input', () => {
+        const regex = /^[A-Za-z\s]*$/; 
+        if (!regex.test(input.value)) {
+            document.getElementById(input.id + 'Error').textContent = 'Only letters and spaces are allowed.';
+            document.getElementById(input.id + 'Error').style.display = 'block';
+            input.value = input.value.replace(/[^A-Za-z\s]/g, ''); 
+        } else {
+            document.getElementById(input.id + 'Error').style.display = 'none';
+        }
+    });
+});
+
+
+emailInput.addEventListener('input', () => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(emailInput.value)) {
+        document.getElementById('emailError').textContent = 'Enter a valid email address.';
+        document.getElementById('emailError').style.display = 'block';
+    } else {
+        document.getElementById('emailError').style.display = 'none';
+    }
+});
+
+messageInput.addEventListener('input', () => {
+    const regex = /^[A-Za-z0-9\s.,!?'-]*$/;
+    if (!regex.test(messageInput.value)) {
+        document.getElementById('messageError').textContent = 'Message can only contain letters, numbers, spaces, and punctuation.';
+        document.getElementById('messageError').style.display = 'block';
+        messageInput.value = messageInput.value.replace(/[^A-Za-z0-9\s.,!?'-]/g, '');
+    } else if (messageInput.value.length < 15) {
+        document.getElementById('messageError').textContent = 'Message must be at least 15 characters.';
+        document.getElementById('messageError').style.display = 'block';
+    } else {
+        document.getElementById('messageError').style.display = 'none';
+    }
+});
+
+function validateForm() {
+    if (nameInput.value.trim().length < 3) {
+        alert('Name must be at least 3 letters.');
+        return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+    if (subjectInput.value.trim().length < 5) {
+        alert('Subject must be at least 5 letters.');
+        return false;
+    }
+    if (messageInput.value.trim().length < 15) {
+        alert('Message must be at least 15 characters.');
+        return false;
+    }
+    return true; 
+}
+</script>
+
+</body>
+</html>

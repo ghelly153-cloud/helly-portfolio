@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thank You | Helly Gajjar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    scroll-behavior:smooth; /* smooth scroll for any anchors */
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("t1.jpg") center/cover no-repeat;
+    filter:blur(3px);  
+    transform:scale(1.02);  
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.25); 
+    z-index:-1;
+}
+
+/* Thank You Card */
+.thank-card{
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(15px);
+    padding:60px 50px;
+    border-radius:30px;
+    text-align:center;
+    max-width:650px;
+    box-shadow:0 20px 40px rgba(183,148,244,0.25);
+    animation:fadeIn 1s ease;
+    width:90%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor:pointer; /* touch-friendly */
+    touch-action: manipulation;
+}
+
+/* Card hover/tap lift effect */
+.thank-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(183,148,244,0.35);
+}
+
+/* Heading */
+.thank-card h1{
+    font-size:40px;
+    color:#6b21a8;
+    margin-bottom:20px;
+}
+
+/* Message Text */
+.thank-card p{
+    font-size:18px;
+    color:#7a5ca6;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* Appreciation Highlight */
+.highlight{
+    color:#ff5fa2;
+    font-weight:bold;
+}
+
+/* Button */
+.home-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    background:linear-gradient(45deg,#c084fc,#f472b6);
+    color:white;
+    transition:0.3s ease;
+    cursor:pointer;
+    touch-action: manipulation;
+}
+
+.home-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(244,114,182,0.35);
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/* Adaptive scrollbars (optional if content grows) */
+.thank-card::-webkit-scrollbar{
+    width:6px;
+}
+
+.thank-card::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg,#c084fc,#f472b6);
+    border-radius:10px;
+}
+
+.thank-card::-webkit-scrollbar-track{
+    background: rgba(255,255,255,0.1);
+    border-radius:10px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .thank-card{
+        padding:50px 35px;
+    }
+    .thank-card h1{
+        font-size:32px;
+    }
+    .thank-card p{
+        font-size:16px;
+    }
+    .home-btn{
+        padding:10px 25px;
+        font-size:16px;
+    }
+}
+
+@media(max-width:480px){
+    .thank-card{
+        padding:40px 25px;
+    }
+    .thank-card h1{
+        font-size:28px;
+    }
+    .thank-card p{
+        font-size:14px;
+    }
+    .home-btn{
+        padding:8px 22px;
+        font-size:15px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="thank-card">
+
+    <h1>🌸 Thank You So Much ❀</h1>
+
+    <p>
+        Your message has been received successfully.
+    </p>
+
+    <p>
+        I truly appreciate you taking the time to connect with me.
+        Your support, collaboration interest, or kind words mean a lot.
+    </p>
+
+    <p class="highlight">
+        Every message motivates me to grow, learn, and create something even more beautiful.
+    </p>
+
+    <p>
+        I will get back to you as soon as possible 💜
+    </p>
+
+    <a href="about.html" class="home-btn">Back to Home</a>
+
+</div>
+
+</body>
+</html>

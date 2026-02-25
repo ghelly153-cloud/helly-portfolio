@@ -351,17 +351,15 @@ body::after{
     transform: translateY(-8px);
 }
 
-
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .project-card{
-    width:80%;
-    max-width:700px;
+    width:100%;
     height:450px;
     padding:35px 30px;
     border-radius:25px;
@@ -374,7 +372,6 @@ body::after{
     cursor:pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .project-card:hover{
     transform:translateY(-5px);
     box-shadow:0 20px 45px rgba(192,132,252,0.35);
@@ -455,6 +452,10 @@ body::after{
         font-size: 18px;
     }
 
+    .cards{
+    grid-template-columns: repeat(2, 1fr);
+}
+
     .hero {
         flex-direction: column;
         padding: 40px 30px;
@@ -529,6 +530,10 @@ body::after{
     .navbar a {
         font-size: 16px;
     }
+
+    .cards{
+    grid-template-columns: 1fr;
+}
 
     .hero {
         padding: 20px 15px;
@@ -1014,6 +1019,99 @@ html {
     <div class="project-buttons">
         <a href="ONLINE_GROCERY_STORE.pdf" target="_blank" onclick="event.stopPropagation();">View Document</a>
 
+    </div>
+
+</div>
+
+<div class="project-card" onclick="window.location.href='projects-details.html#iot';" style="cursor:pointer;">
+
+    <h2>IoT Based Auto Rain Shield 🌧️</h2>
+
+    <div class="project-content">
+
+        <h4>Technologies Used:</h4>
+        <p>Arduino, IoT, Rain Sensor Module, Embedded C, Motor Control</p>
+
+        <h4>Project Description:</h4>
+        <p>Developed an IoT-based automatic rain shield system for weather protection.</p>
+        <p>System detects rainfall using a rain sensor module in real time.</p>
+        <p>Arduino microcontroller processes sensor data and controls shield mechanism.</p>
+        <p>Implemented automated motor control for opening and closing the rain cover.</p>
+        <p>Ensures immediate response when rain is detected without manual effort.</p>
+        <p>Designed energy-efficient circuitry for continuous environmental monitoring.</p>
+        <p>Integrated IoT functionality for remote monitoring and system status updates.</p>
+        <p>Included safety logic to prevent motor damage and system overload.</p>
+        <p>Tested the system under multiple weather conditions for reliability.</p>
+        <p>Demonstrates practical implementation of IoT automation in real-world applications.</p>
+
+    </div>
+
+    <div class="project-buttons">
+        <a href="IOT_AUTO_RAIN_SHIELD.pdf" target="_blank" onclick="event.stopPropagation();">
+            View Document
+        </a>
+    </div>
+
+</div>
+
+<div class="project-card" onclick="window.location.href='projects-details.html#mobile';" style="cursor:pointer;">
+
+    <h2>Mobile Application Development 📱</h2>
+
+    <div class="project-content">
+
+        <h4>Technologies Used:</h4>
+        <p>Android Studio, Java, XML, SQLite</p>
+
+        <h4>Project Description:</h4>
+        <p>Developed a mobile application with interactive and user-friendly interface.</p>
+        <p>Designed UI layouts using XML for clean and structured mobile screens.</p>
+        <p>Implemented application logic using Java programming language.</p>
+        <p>Integrated SQLite database for storing and retrieving user data efficiently.</p>
+        <p>Ensured smooth navigation between activities and fragments.</p>
+        <p>Implemented secure user authentication and data validation methods.</p>
+        <p>Optimized performance for fast loading and minimal memory usage.</p>
+        <p>Tested the application on multiple Android devices for compatibility.</p>
+        <p>Followed modular coding structure for easier updates and scalability.</p>
+        <p>Demonstrates practical implementation of Android mobile development lifecycle.</p>
+
+    </div>
+
+    <div class="project-buttons">
+        <a href="MOBILE_APPLICATION_DEVELOPMENT.pdf" target="_blank" onclick="event.stopPropagation();">
+            View Document
+        </a>
+    </div>
+
+</div>
+
+<div class="project-card" onclick="window.location.href='projects-details.html#portfolio';" style="cursor:pointer;">
+
+    <h2>Personal Portfolio Website 💻</h2>
+
+    <div class="project-content">
+
+        <h4>Technologies Used:</h4>
+        <p>HTML, CSS, JavaScript, Responsive Design</p>
+
+        <h4>Project Description:</h4>
+        <p>Developed a personal portfolio website to showcase projects and skills professionally.</p>
+        <p>Designed clean and responsive layouts using HTML and CSS.</p>
+        <p>Implemented interactive elements using JavaScript for better user engagement.</p>
+        <p>Structured sections for projects, skills, education, and contact information.</p>
+        <p>Ensured mobile and desktop compatibility using responsive design principles.</p>
+        <p>Optimized website loading speed and performance.</p>
+        <p>Integrated smooth scrolling and navigation features.</p>
+        <p>Organized content in modular format for easy maintenance and updates.</p>
+        <p>Tested across different browsers for consistent appearance.</p>
+        <p>Demonstrates practical frontend web development and UI design skills.</p>
+
+    </div>
+
+    <div class="project-buttons">
+        <a href="PORTFOLIO_WEBSITE.pdf" target="_blank" onclick="event.stopPropagation();">
+            View Document
+        </a>
     </div>
 
 </div>
